@@ -394,9 +394,12 @@
 <p>当把按钮wrap进stackview后, 按钮的宽度200会失效, 同样, 需要用stack view来控制按钮的宽度, 解决办法是在document outline中选择stack view, ctrl水平拖动, 在弹出的popover中选择width并设置值为200</p>
 <h3 id="实例​四-使用Size-Classes"><a href="#实例​四-使用Size-Classes" class="headerlink" title="实例​四(使用Size Classes)"></a>实例​四(使用Size Classes)</h3><p>在iPhone landscape模式下. 屏幕的高度不是很够, 希望在此模式下, 去掉title上面的空白, 并减小title和image之间的距离<br>先前title离上边的距离为26, title离image的距离为15.5, 问题是如何仅在iphone landscape模式下设定这两个值?<br><img src="/media/14663152901465.jpg" alt=""></p>
 <p>iOS8引入了Adaptive Layout, 让你的app能适配特定的device以及特定的orientation, 于是引出了<strong>Size Classes</strong></p>
-<p>Size Classes是屏幕大小和方向的抽象, 分为<code>regular</code>和<code>compact</code>两类,  regular是大/长, compact表示小/短, 与 width 和 height两两配对, 组合成4种抽象的设备类型.<br><img src="/media/14663163066812.jpg" alt=""></p>
+<p>Size Classes是屏幕大小和方向的抽象, 分为​两大类(四小类). 两大类是<code>regular</code>和<code>compact</code>,  regular是大/长, compact表示小/短, 再考虑水平方向(width) 和 竖直方向(height), 组合成4种抽象的设备类型.</p>
+<p>有点类似于向量.</p>
+<p><img src="/media/14663163066812.jpg" alt=""></p>
+<p>可以看到左下角是又矮又窄(CC), 右上是又高又宽(RR)</p>
 <p>或者<br><img src="/media/14663165598165.jpg" alt=""></p>
-<p>为了确定设备类型, 必须同时指定horizontal size class和vertical size class, 比如iPad has a regular horizontal (width) size class and a regular vertical (height) size class </p>
+<p>为了确定设备类型, 必须同时指定水平方向上的size class和竖直方向上的size class, 比如iPad 有一个 regular horizontal (width) size class 和一个 regular vertical (height) size class </p>
 <p>这里我们要对iPhone的横屏模式做处理, 对应R-C(iphone plus), 和C-C (iphone), 而R-C + C-C = Any-C</p>
 <p>点击第一个stack view, 在size inspector中找到常量26所在的位置, 点击<br>左边的+号, 新增Any width, Compact height并设定值为0<br><img src="/media/14663169234959.jpg" alt=""><br><img src="/media/14663169771352.jpg" alt=""></p>
 <p>调整后:<br><img src="/media/14663171014467.jpg" alt=""></p>
