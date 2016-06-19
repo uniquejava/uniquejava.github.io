@@ -283,7 +283,7 @@
         
           
             <h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>已读完章节: 1 ~ 19<br>笔记整理(重读章节): 3~6 ..<br>最后更新 2016-06-19</p>
-<p>GFM要注意的:</p>
+<p>Markdown要注意的:</p>
 <ol>
 <li>代码段前必须加一空白行</li>
 <li>代码段后如果紧跟的是新章节必须加一空白行(为避免排版问题最好始终加空行)</li>
@@ -313,12 +313,12 @@
 <p>在Hello World按钮的<code>Connection Inspector</code>中可以看到它发出的事件(Sent Events) 叫Touch Up Inside, 指向了View Controller的showMessage</p>
 <p>而在View Controller的<code>Connection Inspector</code>的Received Actions中可以看到它自身的showMessage方法被Hello World按钮的Touch Up Inside所用.</p>
 <p>Touch Up Inside是在按钮内部抬起手指的意思, 没有用Touch Down是因为防止误按.(Touch Down挪动手指到其它位置并松开可以避免误按)</p>
-<h2 id="使用Auto-Layout-chapter-5"><a href="#使用Auto-Layout-chapter-5" class="headerlink" title="使用Auto Layout(chapter 5)"></a>使用Auto Layout(chapter 5)</h2><p>前面章节将Size classes去掉后各类组件是用的固定定位, 别看Hello World按钮在canvas中是居中的,实际上这个按钮是用相对于左上角的偏移量来定位的, 当<code>Cmd + Arrow Left左旋或Cmd + Arrow Right右旋</code>(切换到横屏模式),或者是切换到其它尺寸的iPhone, Hello World按钮就不再居中.</p>
-<h3 id="为什么用points而不是pixels"><a href="#为什么用points而不是pixels" class="headerlink" title="为什么用points而不是pixels"></a>为什么用points而不是pixels</h3><p>刚推出iPhone的时候屏幕大小为3.5寸 (320x480像素) 那个时候, 1 point = 1 pixel.<br>后来iPhone4出现了Retina屏 (640*960像素), 1 point = 2 pixes的, 但在设计的时候还是用point来表示, 这样不论是不是Retina屏, 用同一个值就能搞定不同的分辨率.<br><img src="/media/14662831377062.jpg" alt=""></p>
-<p>基准的分辨率<br>&gt;<br>iPhone4/4S: 320x480<br>iPhone5/5S: 320x568<br>iPhone6/6S: 375x667</p>
+<h2 id="使用Auto-Layout-chapter-5"><a href="#使用Auto-Layout-chapter-5" class="headerlink" title="使用Auto Layout(chapter 5)"></a>使用Auto Layout(chapter 5)</h2><p>前面章节将Size classes去掉后各类组件是用的固定定位, 别看Hello World按钮在canvas中是居中的,实际上这个按钮是用相对于左上角(0,0)的绝对坐标(x,y)来定位的, 当<code>Cmd + Arrow Left左旋或Cmd + Arrow Right右旋</code>(切换到横屏模式),或者是切换到其它尺寸的iPhone, Hello World按钮就不再居中.</p>
+<h3 id="为什么用points而不是pixels"><a href="#为什么用points而不是pixels" class="headerlink" title="为什么用points而不是pixels"></a>为什么用points而不是pixels</h3><p>2007年刚推出iPhone的时候屏幕大小为3.5寸 (320x480像素) 那个时候, 1 point = 1 pixel.<br>后来iPhone4出现了Retina屏 (640*960像素), 1 point = 2 pixes的, 但在设计的时候还是用point来表示, 这样不论是不是Retina屏, 用同一个值就能搞定不同的分辨率.<br><img src="/media/14662831377062.jpg" alt=""></p>
+<h3 id="基准分辨率-单位point"><a href="#基准分辨率-单位point" class="headerlink" title="基准分辨率(单位point)"></a>基准分辨率(单位point)</h3><p>&gt;<br>iPhone4/4S: 320x480<br>iPhone5/5S: 320x568<br>iPhone6/6S: 375x667</p>
 <p>即使屏幕变成640x960或1280x1920, 也只不过是1point变成了2pixel或4pixel, 我们还是用point来做设计,而将单位转换交给iOS系统来处理</p>
 <p>公式 button.left = (container.left + 30) </p>
-<p>auto layout bar<br><img src="/media/14662834369994.jpg" alt=""></p>
+<h3 id="Auto-Layout-Bar"><a href="#Auto-Layout-Bar" class="headerlink" title="Auto Layout Bar"></a>Auto Layout Bar</h3><p><img src="/media/14662834369994.jpg" alt=""></p>
 <p>Each button has its own function: </p>
 <ol>
 <li>Stack – Embed views into a stack view. Stack view is a new feature in Xcode 7.</li>
