@@ -115,7 +115,7 @@ Map(ch 17)本章主要完成如下界面:
 
 添">
 <meta property="og:image" content="http://yoursite.com/media/14666142039915.jpg">
-<meta property="og:updated_time" content="2016-06-22T17:26:54.000Z">
+<meta property="og:updated_time" content="2016-06-22T17:33:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记Beginning iOS 9 Programming with Swift(part 4)">
 <meta name="twitter:description" content="状态已读完章节: 1 ~ 19Part4包含笔记: 17 ..最后更新 2016-06-23
@@ -328,7 +328,7 @@ Map(ch 17)本章主要完成如下界面:
 <p><img src="/media/14666142039915.jpg" alt=""></p>
 <h3 id="添加MapKit-Framework"><a href="#添加MapKit-Framework" class="headerlink" title="添加MapKit Framework"></a>添加MapKit Framework</h3><p>TARGET &gt; FoodPin &gt; Capabilities &gt; Maps: ON</p>
 <h3 id="Detail-view加个map按钮"><a href="#Detail-view加个map按钮" class="headerlink" title="Detail view加个map按钮"></a>Detail view加个map按钮</h3><p>拖一个button到detail view的image view中(放在rating按钮下面)<br>image=map, w=h=40, bgcolor=red, tint=white, layer.corderRadius=20<br>constraints: top=8, right=-7, w=h=40</p>
-<p>我才发现, 选中button然后点pin按钮, 弹出的constraints框中是离它最近的邻居的值(并不一定是superview)</p>
+<p>我才发现, 选中button然后点pin按钮添加的constraints的值是<code>离它最近的邻居(nearest neighbour)</code>的值, 我一直以为是相对于SuperView的值</p>
 <h3 id="创建Map-view"><a href="#创建Map-view" class="headerlink" title="创建Map view"></a>创建Map view</h3><ol>
 <li>拖一个view controller到storyboard</li>
 <li>拖一个map kit view并设置为全屏(resize the map view to fit the view and then add missing constraints)</li>
