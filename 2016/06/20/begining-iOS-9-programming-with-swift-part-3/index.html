@@ -119,7 +119,7 @@ Markdown要注意的:
 <meta property="og:image" content="http://yoursite.com/media/14664390230587.jpg">
 <meta property="og:image" content="http://yoursite.com/media/14665346888312.jpg">
 <meta property="og:image" content="http://static.oschina.net/uploads/space/2016/0622/141002_MBRZ_113421.gif">
-<meta property="og:updated_time" content="2016-06-22T07:48:18.000Z">
+<meta property="og:updated_time" content="2016-06-22T15:07:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记Beginning iOS 9 Programming with Swift(part 3)">
 <meta name="twitter:description" content="状态已读完章节: 1 ~ 19Part3包含笔记: 12~16 ..最后更新 2016-06-22
@@ -538,7 +538,7 @@ UIApplication.sharedApplication().statusBarStyle = .LightContent
 <p>大小为0: CGAffineTransformMakeScale(0.0, 0.0)<br>坐标(x=0, y=500):  CGAffineTransformMakeTranslation(0, 500)<br>组合: CGAffineTransformConcat(scale, translate)</p>
 </blockquote>
 <p>在viewDidLoad中加入</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> scale = <span class="type">CGAffineTransformMakeScale</span>(<span class="number">0.0</span>, <span class="number">0.0</span>)</span><br><span class="line"><span class="keyword">let</span> translate = <span class="type">CGAffineTransformMakeTranslation</span>(<span class="number">0</span>, <span class="number">500</span>)</span><br><span class="line"><span class="keyword">let</span> combine = <span class="type">CGAffineTransformConcat</span>(scale, translate)</span><br><span class="line">ratingStackView.transform = scale或translate或combine</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> scale = <span class="type">CGAffineTransformMakeScale</span>(<span class="number">0.0</span>, <span class="number">0.0</span>)</span><br><span class="line"><span class="keyword">let</span> translate = <span class="type">CGAffineTransformMakeTranslation</span>(<span class="number">0</span>, <span class="number">500</span>)</span><br><span class="line"><span class="keyword">let</span> combine = <span class="type">CGAffineTransformConcat</span>(scale, translate)</span><br><span class="line">ratingStackView.transform = scale</span><br></pre></td></tr></table></figure>
 <h4 id="设定结束状态"><a href="#设定结束状态" class="headerlink" title="设定结束状态"></a>设定结束状态</h4><p>end_state比较简单, 就是你在storyboard中看到的组件, 在iOS中使用<code>CGAffineTransformIdentity</code> 表示.</p>
 <h4 id="一般动画"><a href="#一般动画" class="headerlink" title="一般动画"></a>一般动画</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidAppear</span><span class="params">(animated: Bool)</span></span> &#123; </span><br><span class="line">    <span class="type">UIView</span>.animateWithDuration(<span class="number">0.4</span>, delay: <span class="number">0.0</span>, options: [], animations: &#123;</span><br><span class="line">    	<span class="comment">//设定结束状态</span></span><br><span class="line">    	<span class="keyword">self</span>.ratingStackView.transform = <span class="type">CGAffineTransformIdentity</span></span><br><span class="line">    &#125;, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="弹簧动画"><a href="#弹簧动画" class="headerlink" title="弹簧动画"></a>弹簧动画</h4><p>弹簧动画详见: <a href="http://my.oschina.net/uniquejava/blog/699226" target="_blank" rel="external">http://my.oschina.net/uniquejava/blog/699226</a></p>
@@ -662,7 +662,7 @@ UIApplication.sharedApplication().statusBarStyle = .LightContent
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
