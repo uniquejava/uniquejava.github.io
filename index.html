@@ -238,6 +238,196 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/23/markdown-and-fenced-code-blocks/" itemprop="url">
+                  markdown and fenced code blocks
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-23T10:02:02+08:00" content="2016-06-23">
+              2016-06-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>见这里: <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="external">https://guides.github.com/features/mastering-markdown/</a><br>还有这里: <a href="https://gist.github.com/clintel/1155906" target="_blank" rel="external">https://gist.github.com/clintel/1155906</a></p>
+<p>我这里主要测试的是一些稍微复杂一点的场景.</p>
+<p>总结:</p>
+<ol>
+<li>Code block前后都必须加空白行</li>
+<li>OL前最好也加空白行, OL后必须加空白行.</li>
+<li>OL中间不能出现空白行, 需要把每个空白行替换成一个<code>&gt;</code>字符.</li>
+<li>OL的第一行以<code>TAB&gt;</code>开始, 后续的行不必以<code>TAB&gt;</code>开始.</li>
+</ol>
+<h2 id="Ordered-List测试"><a href="#Ordered-List测试" class="headerlink" title="Ordered List测试"></a>Ordered List测试</h2><p>OL前面代空白行</p>
+<ol>
+<li>item #1</li>
+<li>item #2</li>
+<li>item #3</li>
+</ol>
+<p>OL前面不代空白行</p>
+<ol>
+<li>item #1</li>
+<li>item #2</li>
+<li>item #3</li>
+</ol>
+<p>Blockquote中插入OL<br>&gt;</p>
+<ol>
+<li>item #1</li>
+</ol>
+<ul>
+<li>item #2</li>
+<li>item #3</li>
+</ul>
+<p>Blockquote中插入OL(附加一些文字)</p>
+<blockquote>
+<p>text here</p>
+<ol>
+<li>item #1</li>
+</ol>
+<ul>
+<li>item #2</li>
+<li>item #3</li>
+</ul>
+<p>text here</p>
+</blockquote>
+<p>End.</p>
+<h2 id="在Ordered-List中嵌套代码"><a href="#在Ordered-List中嵌套代码" class="headerlink" title="在Ordered List中嵌套代码"></a>在Ordered List中嵌套代码</h2><ol>
+<li>This is line one</li>
+<li><p>OL中插入code block需要tab缩进, 并且前后必须用空白行隔离</p>
+ <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"ident with one tab"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>二级嵌套</p>
+<ul>
+<li>hello</li>
+<li><p>二级OL中插入code block需要用两个tab缩进</p>
+  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"ident with 2 tabs"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>* ​OL中插入block quote
+    &gt; Blockquote以`TAB&gt;`开始
+    后续的行不必以`TAB&gt;`开始
+    This line just works
+    &gt;
+    空白行必须加上`&gt;`
+    Blockquote中可以插入fenced code,但前后必须用空白行隔离
+    &gt;
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func 2TabsBe4Func()&#123;</span><br><span class="line">	print(&quot;3 tabs before print&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    &gt;
+    another fenced code
+    &gt;
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func 2TabsBe4Func()&#123;</span><br><span class="line">	print(&quot;3 tabs before print&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    &gt;
+    二级OL中的blockquote中OL
+    使用Tab缩进不行(看起来像个代码块):
+    &gt;
+        1. item 1
+        * item 2
+    &gt;
+    每行都必须加&gt;
+    &gt;
+    &gt;1. item 1
+    &gt;* item 2
+    &gt;* item 3
+    &gt;
+    不加的后果:
+    1. item 1
+    * item 2
+    * item3
+
+    &gt; 呃..
+</code></pre><ol>
+<li>hello</li>
+<li>where am I?</li>
+</ol>
+<h2 id="实验的源代码"><a href="#实验的源代码" class="headerlink" title="实验的源代码"></a>实验的源代码</h2><p>把这段代码放在git osc, github, hexo, mweb中查看不同环境下的差异</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/23/begining-iOS-9-programming-with-swift-part-5/" itemprop="url">
                   读书笔记Beginning iOS 9 Programming with Swift(part 5)
                 </a>
@@ -441,12 +631,12 @@
  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBOutlet</span> <span class="keyword">var</span> mapView:<span class="type">MKMapView</span>!</span><br><span class="line"><span class="keyword">var</span> restaurant:<span class="type">Restaurant</span>!</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="Detail-view切到Map-View并传参"><a href="#Detail-view切到Map-View并传参" class="headerlink" title="Detail view切到Map View并传参"></a>Detail view切到Map View并传参</h3><p>Ctrl 拖动map button到新建的map view controller 选择segue的类型为Show, ID为showMap.<br>顺便把当前的restaurant做为参数通传过去.</p>
+<h3 id="Detail-view切到Map-View并传参"><a href="#Detail-view切到Map-View并传参" class="headerlink" title="Detail view切到Map View并传参"></a>Detail view切到Map View并传参</h3><p>Ctrl 拖动map button到新建的map view controller 选择segue的类型为Show, ID为showMap.<br>顺便把当前的restaurant做为参数传过去.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">prepareForSegue</span><span class="params">(segue:, sender: AnyObject!)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> segue.identifier == <span class="string">"showMap"</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> destinationController = segue.destinationViewController <span class="keyword">as</span>!</span><br><span class="line"><span class="type">MapViewController</span></span><br><span class="line">        destinationController.restaurant = restaurant</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Run你会发现地图已经可以正常工作了.</p>
-<h3 id="通过地址得到坐标-CLGeocoder"><a href="#通过地址得到坐标-CLGeocoder" class="headerlink" title="通过地址得到坐标(CLGeocoder)"></a>通过地址得到坐标(CLGeocoder)</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> geoCoder = <span class="type">CLGeocoder</span>()</span><br><span class="line">geoCoder.geocodeAddressString(<span class="string">"Wuhan, China"</span>, completionHandler: &#123; </span><br><span class="line">placemarks, error <span class="keyword">in</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="通过地址得到坐标-CLGeocoder"><a href="#通过地址得到坐标-CLGeocoder" class="headerlink" title="通过地址得到坐标(CLGeocoder)"></a>通过地址得到坐标(CLGeocoder)</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> geoCoder = <span class="type">CLGeocoder</span>()</span><br><span class="line">geoCoder.geocodeAddressString(<span class="string">"Wuhan, China"</span>, completionHandler: &#123; </span><br><span class="line">	placemarks, error <span class="keyword">in</span></span><br><span class="line">	<span class="comment">// process placemark here</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>placemarks是一个位置数组, 一般取数组中的第一个元素.</p>
-<p>通过CLPlacemark得到坐标信息: <code>let coordinate = placemark.location.coordinate</code></p>
+<p>通过CLPlacemark得到坐标信息:<br><code>let coordinate = placemark.location.coordinate</code></p>
 <h3 id="通过坐标得到Annotation并显示在地图中"><a href="#通过坐标得到Annotation并显示在地图中" class="headerlink" title="通过坐标得到Annotation并显示在地图中"></a>通过坐标得到Annotation并显示在地图中</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建annotation(设定文字和坐标)</span></span><br><span class="line"><span class="keyword">let</span> annotation = <span class="type">MKPointAnnotation</span>()</span><br><span class="line">annotation.title = <span class="string">"Times Square"</span></span><br><span class="line">annotation.coordinate = placemark.location.coordinate</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在map中显示该annotation</span></span><br><span class="line">mapView.showAnnotations([annotation], animated: <span class="literal">true</span>)</span><br><span class="line"><span class="comment">// 自动弹出(不用用户点击)</span></span><br><span class="line">mapView.selectAnnotation(annotation, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="实战-简单版本"><a href="#实战-简单版本" class="headerlink" title="实战 (简单版本)"></a>实战 (简单版本)</h3><p>如果要在地图上显示某个位置, 只需要实现viewDidLoad方法即可, 不需要其它任何设置.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"><span class="comment">// Convert address to coordinate and annotate it on map</span></span><br><span class="line"><span class="keyword">let</span> geoCoder = <span class="type">CLGeocoder</span>()</span><br><span class="line">geoCoder.geocodeAddressString(restaurant.location, completionHandler: &#123;</span><br><span class="line">  placemarks, error <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">if</span> error != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">print</span>(error)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">let</span> placemarks = placemarks &#123;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// Get the first placemark</span></span><br><span class="line">      <span class="keyword">let</span> placemark = placemarks[<span class="number">0</span>]</span><br><span class="line">      <span class="comment">// Add annotation</span></span><br><span class="line">      <span class="keyword">let</span> annotation = <span class="type">MKPointAnnotation</span>()</span><br><span class="line">      annotation.title = <span class="keyword">self</span>.restaurant.name</span><br><span class="line">      annotation.subtitle = <span class="keyword">self</span>.restaurant.type</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span> <span class="keyword">let</span> location = placemark.location &#123;</span><br><span class="line">          annotation.coordinate = location.coordinate</span><br><span class="line">          <span class="comment">// Display the annotation</span></span><br><span class="line">          <span class="keyword">self</span>.mapView.showAnnotations([annotation], animated: <span class="literal">true</span>)</span><br><span class="line">          <span class="keyword">self</span>.mapView.selectAnnotation(annotation, animated: <span class="literal">true</span>)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1655,7 @@ forIndexPath: indexPath)</code>后面加上<code>as! RestaurantTableViewCell</co
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1475,7 +1665,7 @@ forIndexPath: indexPath)</code>后面加上<code>as! RestaurantTableViewCell</co
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
